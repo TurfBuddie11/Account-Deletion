@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion - Turf Buddie</title>
+    <style>
+        /* Reset default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container for the content */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button styles */
+        .delete-btn {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .confirm-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirm-popup .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .popup-content button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px;
+        }
+
+        .popup-content .cancel-btn {
+            background-color: #95a5a6;
+            color: #fff;
+        }
+
+        .popup-content .confirm-btn {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1, h2 {
+                font-size: 1.5rem;
+            }
+
+            p, ul {
+                font-size: 0.9rem;
+            }
+
+            .delete-btn {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Account Deletion Process</h1>
+        <p>If you wish to delete your account, follow these simple steps:</p>
+        <ol>
+            <li><strong>Go to the Profile Section</strong>: Open the app and navigate to the <strong>Profile</strong> section.</li>
+            <li><strong>Access the Account Settings</strong>: Tap on the <strong>Account</strong> section.</li>
+            <li><strong>Delete Account Option</strong>: You’ll see an option to <strong>Delete Account</strong>. Click this to proceed.</li>
+            <li><strong>Confirmation Popup</strong>: A confirmation popup will appear asking if you’re sure you want to delete your account. Click <strong>Yes</strong> to permanently delete your account.</li>
+        </ol>
+
+        <h2>Data Deletion Timeline</h2>
+        <p>Once your account is deleted, all personal data (such as username, date of birth, phone number, state, city, etc.) will be permanently removed from our system. Please note that this process may take <strong>24 to 48 hours</strong>.</p>
+
+        <h2>Contact Support</h2>
+        <p>If you encounter any issues or have questions regarding account deletion, please feel free to reach out to us:</p>
+        <ul>
+            <li><strong>Email</strong>: <a href="mailto:turfbuddy11@gmail.com">turfbuddy11@gmail.com</a></li>
+            <li><strong>Phone</strong>: +917058692974</li>
+        </ul>
+
+        <h2>Privacy Policy</h2>
+        <p>For more information on how we handle your personal data, please refer to our <a href="https://turfbuddie11.github.io/Privacy-Policy/">Privacy Policy</a>.</p>
+
+        <!-- Delete Account Button -->
+        <button class="delete-btn" onclick="showConfirmationPopup()">Delete Account</button>
+    </div>
+
+    <!-- Confirmation Popup -->
+    <div class="confirm-popup" id="confirmationPopup">
+        <div class="popup-content">
+            <h3>Are you sure you want to delete your account?</h3>
+            <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+            <button class="confirm-btn" onclick="confirmDeletion()">Yes, Delete My Account</button>
+        </div>
+    </div>
+
+    <script>
+        function showConfirmationPopup() {
+            document.getElementById("confirmationPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("confirmationPopup").style.display = "none";
+        }
+
+        function confirmDeletion() {
+            alert("Your account has been deleted. All your data will be removed within 24 to 48 hours.");
+            closePopup();
+        }
+    </script>
+
+</body>
+</html>
